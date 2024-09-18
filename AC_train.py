@@ -52,7 +52,8 @@ def compute_returns(next_value, rewards, masks, gamma=0.99):
     returns = []
     # step(0) -> step(1) -> step(2) -> ... -> step(-2) -> step(-1)
     # step(1) is the next step of step(0), step(-1) is the next step of step(-2)
-    # return(-1) = reward(-1) + gamma * next_value   (if step(-1) is the last step, the next step of step(-1) is the beginning step, the return of the beginning step is 0)
+    # return(-1) = reward(-1) + gamma * next_value   
+    #(if step(-1) is the last step, the next step of step(-1) is the beginning step, the return of the beginning step is 0)
     # return(-2) = reward(-2) + gamma * return(-1)
     # return(-3) = reward(-3) + gamma * return(-2)
     for step in reversed(range(len(rewards))):
